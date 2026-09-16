@@ -1,55 +1,46 @@
-/* 모든 요소의 크기 계산 방식을 통일 */
 * {
   box-sizing: border-box;
 }
 
-/* 웹페이지 전체 배경 */
+html,
 body {
   margin: 0;
-  padding: 30px 15px;
-  background-color: #eeeeee;
+  padding: 0;
 }
 
-/* 포스터 최대 크기와 가운데 정렬 */
+body {
+  background-color: #e9eef5;
+}
+
 .page {
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 24px;
 }
 
-/* 포스터와 클릭 영역을 함께 담는 상자 */
 .poster-container {
   position: relative;
   width: 100%;
 }
 
-/* 포스터 이미지 */
 .poster {
   display: block;
   width: 100%;
   height: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* 25개 기업 클릭 영역 전체 */
-.company-grid {
-  position: absolute;
-
-  /* 임시 위치: 포스터에 맞춰 조정 예정 */
-  top: 30%;
-  left: 4%;
-  width: 92%;
-  height: 48%;
-
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 0.6%;
-
-  z-index: 10;
+area {
+  cursor: pointer;
 }
 
-/* 기업별 클릭 영역 */
-.company-grid a {
-  display: block;
-  border: 2px solid red;
-  background-color: rgba(255, 
+@media (max-width: 600px) {
+  .page {
+    padding: 0;
+  }
+
+  .poster {
+    box-shadow: none;
+  }
+}
